@@ -2,21 +2,54 @@
   "name": "link-shortener",
   "version": "1.0.0",
   "description": "A link shortening service",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "migrate": "node migrate.js",
-    "postinstall": "npm run migrate"
-  },
   "keywords": [],
-  "repository": "https://github.com/koddsson/link-shortener",
-  "author": "",
+  "homepage": "https://github.com/koddsson/link-shortener#readme",
+  "bugs": {
+    "url": "https://github.com/koddsson/link-shortener/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koddsson/link-shortener.git"
+  },
   "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "module": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "postinstall": "npm run migrate",
+    "migrate": "node migrate.js",
+    "start": "node index.js",
+    "test": "mocha -r esm"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "esm": "^3.0.82",
     "express": "^4.16.3",
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-mount": "^3.0.0",
+    "koa-route": "^3.2.0",
+    "pg": "^7.4.3",
     "sql-template-strings": "^2.2.2",
     "sqlite": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0",
+    "prettier": "^1.14.2"
   }
 }
